@@ -10,9 +10,10 @@ predicate sorted(a:array<int>)
 }
 
 method Find(a: array<int>, key: int) returns (index: int)
+
    requires sorted(a);
    ensures 0 <= index ==> index < a.Length && a[index] == key
    ensures index < 0 ==> forall k :: 0 <= k < a.Length ==> a[k] != key
-}
+
 // Vai aparecer a prova de terminacao na quarta feira
 
